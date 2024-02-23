@@ -1,0 +1,118 @@
+<!--#Form: This is called a template reference variable in Angular. It creates a reference to the form element in the Angular template. The # symbol denotes the creation of a template reference variable.-->
+
+<form #Form="ngForm" (submit)="OnSubmit()">
+
+  <!--#proName="ngModel": Creates a template reference variable proName for the input field, which can be used for form validation.
+  <div *ngIf="proName.invalid && (proName.dirty && proName.touched)" class="alert">enter valid name</div>: This creates a div element with an error message "enter valid name", which is displayed conditionally based on the validation state of the input field referenced by proName. The *ngIf directive displays the div only if the input field is invalid, dirty, and touched.-->
+
+
+  <div class="form-group row">
+    <label for="name" class="col-md-4">ProductCategoryName</label>
+    <input type="text"
+           id="name"
+           name="name"
+           class="form-control-sm  col-md-8"
+           required
+           [(ngModel)]="model.name"
+           #proName="ngModel" />
+    <div *ngIf="proName.invalid && (proName.dirty && proName.touched)"
+         class="alert">
+      enter valid name
+    </div>
+  </div>
+
+  <table class="table table-responsive-sm table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>ProductNumber</th>
+        <th>Color</th>
+        <th>Standard Cost</th>
+        <th>List Price</th>
+        <th>Size</th>
+        <th>Weight</th>
+        <th>
+          <button type="button" class="btn btn-info" (click)="AddProduct()">Add Product</button>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <!--let i = index declares a variable i that holds the current index of the iteration.-->
+      <!--name="name[{{i}}]": Sets the name attribute of the input field dynamically based on the current index i. This might be useful if you're submitting the form data in a format where you want to distinguish between different inputs.-->
+      <!--it's not mandatory to match the value of the name attribute with the class property name. In Angular, the name attribute is typically used for form submission and validation purposes. While it's common practice to match the name attribute with the corresponding class property name, it's not strictly required.-->
+
+      <tr *ngFor="let product of model.products; let i = index">
+        <td class="form-group">
+          <input type="text"
+                 name="name[{{i}}]"
+                 class="form-control"
+                 required
+                 [(ngModel)]="product.name" />
+
+        </td>
+        <td class="form-group">
+          <input type="text"
+                 name="productNumber[{{i}}]"
+                 class="form-control"
+                 required
+                 [(ngModel)]="product.productNumber" />
+
+        </td>
+        <td class="form-group">
+          <input type="text"
+                 name="color[{{i}}]"
+                 class="form-control"
+                 required
+                 [(ngModel)]="product.color" />
+
+        </td>
+        <td class="form-group">
+          <input type="text"
+                 name="standardCost[{{i}}]"
+                 class="form-control"
+                 required
+                 [(ngModel)]="product.standardCost" />
+
+        </td>
+        <td class="form-group">
+          <input type="text"
+                 name="listPrice[{{i}}]"
+                 class="form-control"
+                 required
+                 [(ngModel)]="product.listPrice" />
+
+        </td>
+        <td class="form-group">
+          <input type="text"
+                 name="size[{{i}}]"
+                 class="form-control"
+                 required
+                 [(ngModel)]="product.size" />
+
+        </td>
+        <td class="form-group">
+          <input type="text"
+                 name="weight[{{i}}]"
+                 class="form-control"
+                 required
+                 [(ngModel)]="product.weight" />
+
+        </td>
+        <td>
+          <button type="button" class="btn btn-warning" (click)="DeleteProduct(i)">Delete Product</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <hr />
+  <!--This code creates a "Save" button that submits a form. The button is disabled if the form is invalid (meaning some fields have errors), preventing users from submitting incomplete or incorrect data. The button is enabled only when the form is valid.-->
+
+  <button type="submit" [disabled]="Form.invalid">Save</button>
+
+  <!--#Form and Form.invalid need to refer to the same form object.
+  #Form is not just a name, it's a template reference variable that provides access to the form element in your component's code.-->
+
+</form>
+

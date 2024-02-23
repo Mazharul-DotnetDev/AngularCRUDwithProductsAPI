@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34607.119
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductsAPI", "ProductsAPI\ProductsAPI.csproj", "{FAB0B381-1DE0-451C-B69E-4B4589BF376E}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "NG.ClientProductsAPI", "NG.ClientProductsAPI\NG.ClientProductsAPI.esproj", "{CCEFF3CA-9220-48CA-9A79-78FD7CC8FBF0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FAB0B381-1DE0-451C-B69E-4B4589BF376E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAB0B381-1DE0-451C-B69E-4B4589BF376E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAB0B381-1DE0-451C-B69E-4B4589BF376E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAB0B381-1DE0-451C-B69E-4B4589BF376E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCEFF3CA-9220-48CA-9A79-78FD7CC8FBF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCEFF3CA-9220-48CA-9A79-78FD7CC8FBF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCEFF3CA-9220-48CA-9A79-78FD7CC8FBF0}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{CCEFF3CA-9220-48CA-9A79-78FD7CC8FBF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCEFF3CA-9220-48CA-9A79-78FD7CC8FBF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCEFF3CA-9220-48CA-9A79-78FD7CC8FBF0}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C47C98D3-E8F0-4F87-AEAC-2F57067B0A9E}
+	EndGlobalSection
+EndGlobal
